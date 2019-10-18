@@ -1,0 +1,23 @@
+.modal2 {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial";
+  text-align: left;
+  margin-left:90px;
+  margin-top:15px;
+  margin-bottom:15px;
+
+}
+
+.form-control {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial";
+  text-align: left;
+
+}
+
+.gumb {
+  margin-top:15px;
+  font-size: 15px;
+}

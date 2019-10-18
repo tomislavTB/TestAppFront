@@ -1,0 +1,81 @@
+
+<div>
+  <div class="mb-3">
+      <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dobavljači</b></h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info</strong>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+          <form class="card card-sm">
+              <div class="card-body row no-gutters align-items-center">
+                  <div class="col-auto">
+                      <i class="fas fa-search h4 text-body"></i>
+                  </div>
+                  <!--end of col-->
+                  <div class="col">
+                      <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords" (keyup)="filterDatatable($event)">
+                  </div>
+                  <!--end of col-->
+                  <!--end of col-->
+              </div>
+          </form>
+      </div>
+      <!--end of col-->
+  </div> <br>  <br>
+
+
+
+
+<div class="col-sm-12 mb-3">
+    <button class="btn add btn-secondary float-right; clear: left" (click)="openSupplierModal()">
+        <i class="fa fa-plus"></i>
+    </button>
+  </div>
+
+
+
+  <div class="Novo">
+    <ngx-datatable style="box-shadow: none" class="material fullscreen" [columnMode]="'force'" [headerHeight]="50"
+      [footerHeight]="100" [rowHeight]="'auto'" [rows]="suppliersData">
+      <ngx-datatable-column name="supplierName">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> <h5><b>Naziv dobavljača</b></h5> </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="street">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"><h5><b>Ulica i broj</b></h5> </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="estate">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> <h5><b>Naselje</b></h5> </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="city">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> <h5><b>Grad</b></h5> </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="actions">
+        <ng-template ngx-datatable-header-template>
+          <font color="red">  <h5><b>Akcije</b></h5> </font>
+        </ng-template>
+
+
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
+            <button class="gumb btn btn-outline-primary"><i class="fas fa-search-plus"(click)="openSupplierModal(row)"></i></button>
+          </div>
+        </ng-template>
+
+
+
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>

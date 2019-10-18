@@ -1,0 +1,68 @@
+.modal1 {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial";
+  text-align: left;
+  margin-left:90px;
+  margin-top:15px;
+  margin-bottom:15px;
+
+}
+
+.form-control {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial";
+  text-align: left;
+
+}
+
+.gumb {
+  margin-top:15px;
+  font-size: 15px;
+
+}
+
+.slika{
+  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+  width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 80%;
+  clear: left;
+  margin-right:90px;
+}
+
+.example-card {
+  border: 3px solid green;
+  background-color: lightblue;
+}
+
+.novo3 {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Arial";
+}
+
+ .card {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px 1px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.08) !important;
+  border: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  word-wrap: break-word !important;
+  background-color: #fff !important;
+  background-clip: border-box !important;
+}
+
+.form-row {
+  display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: center;
+
+
+}
+

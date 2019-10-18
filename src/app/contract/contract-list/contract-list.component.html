@@ -1,0 +1,168 @@
+
+<div>
+  <div class="mb-3">
+    <h2><b>&nbsp;&nbsp;Ugovori</b></h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info</strong>
+  </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords" (keyup)="filterDatatable2($event)">
+                    </div>
+                    <!--end of col-->
+                    <!--end of col-->
+                </div>
+            </form>
+        </div>
+        <!--end of col-->
+    </div> <br>  <br>
+
+
+
+<div class="col-sm-12 mb-3">
+    <button class="btn add btn-secondary float-right; clear: left" (click)="openContractModal()">
+        <i class="fa fa-plus"></i>
+    </button>
+</div>
+
+
+
+
+  <div class="Novo">
+    <ngx-datatable style="box-shadow: none" class="material fullscreen" [columnMode]="'force'" [headerHeight]="50"
+      [footerHeight]="100" [rowHeight]="'auto'" [rows]="contractsData">
+      <ngx-datatable-column name="contractName">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Naziv ugovora </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="contractCode">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Urudzbeni Broj </font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="contractNumber">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Broj Ugovora</font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Currency">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Valuta</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          {{ row.Currency }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="pricePDV">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue">  Cijena PDV</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          {{ row.pricePDV }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="price">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue">  Cijena</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          {{ row.price }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="expirationDate">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Datum isteka ugovora</font>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="supplier">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Dobavljač</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          {{ row.supplier ? row.supplier.supplierName : 'Nema dobavljaca' }}
+         </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="deliveryNote">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Uručena zapremnica</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+         {{ row.deliveryNote ? 'Da' : 'Ne' }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name=" deliveryReceipt">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue"> Uručena primka</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+           {{ row.deliveryReceipt ? 'Da' : 'Ne' }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name=" deliveryReceipt">
+        <ng-template ngx-datatable-header-template>
+          <font color="blue">  Urucena narudzbenica</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+           {{ row.deliveryReceipt ? 'Da' : 'Ne' }}
+        </ng-template>
+      </ngx-datatable-column>
+      <!-- <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{ row.name }}
+            </ng-template> -->
+
+      <!-- <ngx-datatable-column name="name" [width]="85" [canAutoResize]="false">
+            <ng-template ngx-datatable-header-template>
+              Obavezan
+            </ng-template>
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{ row.isRequired ? 'Da' : 'Ne' }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="name" [width]="85" [canAutoResize]="false">
+            <ng-template ngx-datatable-header-template>
+              Bodovi
+            </ng-template>
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              <span *ngIf="row.uploadedCount > 0 && row.uploadedDocument.isApproved">{{row.uploadedDocument.points}}</span>
+              <span *ngIf="row.uploadedCount > 0 && !row.uploadedDocument.isApproved">-</span>
+              <span *ngIf="!row.uploadedDocument || row.uploadedDocument > 0">-</span>
+            </ng-template>
+          </ngx-datatable-column> -->
+      <ngx-datatable-column name="actions">
+        <ng-template ngx-datatable-header-template>
+          <font color="red"> Akcije</font>
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+          <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
+            <button class="btn btn-outline-primary" (click)="openContractModal(row)"><i class="fas fa-search-plus"></i></button>
+          </div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
+
+
+
+   <!-- <input id="name" name="name" class="form-control"
+      required minlength="8" required maxlength="11"
+      [(ngModel)]="contract.contractName" #name="ngModel" >
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div> -->

@@ -1,0 +1,101 @@
+<form class="user" [formGroup]="contractAoe" (ngSubmit)="onFormSubmit()">
+  <div class="row">
+    <div class="modal1 col-md-8 ">
+      <label for="name">Naziv Ugovora</label>
+      <input type="text" class="form-control" formControlName="contractName" id="asdf" placeholder="Naziv">
+
+      <label for="name"> Urudzbeni Broj</label>
+      <input type="number" class="form-control" formControlName="contractCode" id="asdf" placeholder="Urudzbeni Broj">
+
+      <label for="number"> Broj Ugovora</label>
+      <input type="text" class="form-control" formControlName="contractNumber" id="asdf" placeholder="Broj Ugovora">
+
+
+      <label for="name"> Valuta</label>
+      <input type="text" class="form-control" formControlName="Currency" id="asdf" placeholder="Valuta">
+
+      <label for="number"> Cijena PDV</label>
+      <input type="text" class="form-control" formControlName="pricePDV" id="asdf" placeholder="Cijena PDV">
+
+
+      <label for="number"> Cijena bez PDV-a</label>
+      <input type="text" class="form-control" formControlName="price" id="asdf" placeholder="Cijena">
+
+
+      <label for="name"> Datum isteka ugovora</label>
+      <input type="text" class="form-control" formControlName="expirationDate" id="asdf"
+        placeholder="Datum isteka ugovora">
+
+      <label for="name"> Dobavljac</label>
+      <ng-select [items]="this.suppliersData" bindLabel="supplierName" bindValue="supplierId"
+        formControlName="supplier">
+      </ng-select>
+
+      <label for="name"> Uručena zapremnica</label>
+      <input type="text" class="form-control" formControlName="deliveryNote" id="asdf" placeholder="Uručena zapremnica">
+
+      <label for="name"> Uručena primka</label>
+      <input type="text" class="form-control" formControlName="deliveryReceipt" id="asdf" placeholder="Uručena primka">
+
+      <label for="name"> Urucena narudzbenica</label>
+      <input type="text" class="form-control" formControlName="deliveryOrderForm" id="asdf"
+        placeholder="Urucena narudzbenica">
+      <div class='gumb'>
+        <button type="submit" (click)="onFormSubmit()"> <i class="far fa-save"></i> </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</form>
+
+<!-- <div class="modal-content">
+    INFO:<br>
+    Naziv Ugovora: {{rowData.contractName}}<br>
+    Urudzbeni Broj : {{rowData.contractCode}}<br>
+    Broj Ugovora : {{rowData.contractNumber}}<br>
+    Valuta:  {{rowData.Currency}}<br>-->
+
+
+<!-- <mat-divider></mat-divider> -->
+<!-- <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <div class='slika'>
+        <img mat-card-image src="https://amp.thenational.ae/image/policy:1.692467:1514978965/bz04-Money-main-illo.jpg?f=16x9&w=1200&$p$f$w=0b641a5" style="float:left;"> </div>
+
+        <div class="novo3" *ngIf= "rowData">
+          Cijena sa PDV-om u kunama: {{ rowData.pricePDV }}<br> <span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated" (click)="OnIzracunaj(rowData.pricePDV)"> <i class="fas fa-calculator"> </i>  </span><br>
+
+           Cijena bez PDV-a u kunama: {{ rowData.price }}
+           <span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated2" (click)="OnIzracunaj2(rowData.price)"> <i class="fas fa-calculator"> </i>  </span>
+           </div>
+
+      </mat-card-header>
+    </mat-card> -->
+<div class="form-row ml-1" *ngIf= "rowData">
+  <div class="card">
+      <i class="fas fa-money-bill-wave"></i>
+      <p class="text-muted mt-2 mb-0">Cijena sa PDV-om u kunama
+          <p class="text-primary text-24 line-height-1 mb-2"> {{ rowData.pricePDV }}<span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated" (click)="OnIzracunaj(rowData.pricePDV)"> <i class="fas fa-calculator"> </i>  </span><br>
+  </div>
+  <div class="form-row ml-1" *ngIf= "rowData">
+      <div class="card">
+          <i class="fas fa-money-bill-wave"></i>
+          <p class="text-muted mt-2 mb-0">Cijena bez PDV-a u kunama
+              <p class="text-primary text-24 line-height-1 mb-2"> {{ rowData.price }}<span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated2" (click)="OnIzracunaj2(rowData.price)"> <i class="fas fa-calculator"> </i>  </span><br>
+
+
+<!-- <div class="novo3" *ngIf= "rowData">
+   Cijena sa PDV-om u kunama: {{ rowData.pricePDV }} <span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated" (click)="OnIzracunaj(rowData.pricePDV)"> <i class="fas fa-calculator"> </i>  </span><br>
+
+    Cijena bez PDV-a u kunama: {{ rowData.price }}
+    <span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated2" (click)="OnIzracunaj2(rowData.price)"> <i class="fas fa-calculator"> </i>  </span>
+    </div> -->
+
+<!-- Datum isteka ugovora: {{rowData.expirationDate}}<br>
+    Dobavljac : {{rowData.supplier}}<br>
+    Uručena zapremnica: {{rowData.deliveryNote ? 'Da' : 'Ne'}}<br>
+    Uručena primka: {{rowData.deliveryReceipt ? 'Da' : 'Ne'}}<br>
+    Urucena narudzbenica : {{rowData.deliveryOrderForm ? 'Da' : 'Ne'}}<br> -->

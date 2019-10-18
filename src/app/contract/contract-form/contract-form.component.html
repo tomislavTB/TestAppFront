@@ -1,0 +1,59 @@
+<router-outlet></router-outlet>
+
+<form action="/action_page.php">
+  Naziv ugovora:<br> <input type="text" name="name"
+  class="form-control" placeholder= "Unesite naziv ugovora"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+
+
+  Urudzbeni Broj: <br>    <input type="text" name="street"
+  class="form-control" placeholder= "Unesite urudzbeni broj"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Broj Ugovora: <br>         <input type="text" name="estate"
+  class="form-control" placeholder= "Unesite broj ugovora"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Valuta: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite valuru (KN ili Euro)"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+
+
+
+
+  Cijena PDV: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite cijenu sa PDV-om"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Cijena: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite cijenu bez PDV-a"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Datum isteka ugovora: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite datum isteka ugovora"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Dobavljač: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite dobavljača"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Uručena zapremnica: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite uručenu zapremnicu"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Uručena primka: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite uručenu primku"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Urucena narudzbenica: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite urucenu narudžbenicu"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+
+  <input type="submit" value="Submit">
+</form>

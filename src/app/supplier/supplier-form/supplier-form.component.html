@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+
+<form action="/action_page.php">
+  Naziv dobavljača:<br> <input type="text" name="name" class="form-control" placeholder= "Unesite naziv dobavljaca"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+
+  Ulica i broj: <br>    <input type="text" name="street" class="form-control" placeholder= "Unesite ulicu i broj"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Naselje: <br>         <input type="text" name="estate" class="form-control" placeholder= "Unesite naselje"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+  Grad: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite grad"
+  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+
+
+
+
+  <input type="submit" value="Submit">
+</form>

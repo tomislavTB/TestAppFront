@@ -1,0 +1,23 @@
+
+<form class="user" [formGroup]="supplierAoe" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+      <div class="modal2 col-md-8">
+          <label for="name">Naziv Dobavljaca</label>
+          <input type="text" class="form-control" formControlName="supplierName" id="asdf" placeholder="Naziv">
+
+          <label for="name"> Ulica i broj</label>
+          <input type="text" class="form-control" formControlName="street" id="asdf" placeholder="Ulica i broj" >
+
+          <label for="name"> Naselje</label>
+          <input type="text" class="form-control" formControlName="estate" id="asdf" placeholder="Naselje">
+
+          <label for="name"> Grad</label>
+          <input type="text" class="form-control" formControlName="city" id="asdf" placeholder="Grad">
+
+
+          <div class='gumb'>
+            <button type="submit" (click)="onFormSubmit()"> <i class="far fa-save"></i> </button>
+          </div>
+        </div>
+      </div>
+    </form>
