@@ -9,10 +9,16 @@ import { ContractFormComponent } from './contract-form/contract-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatDividerModule, MatIconModule, MatDatepicker, MatDatepickerModule } from '@angular/material';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [ContractListComponent, ModalAoeContractComponent, ContractFormComponent],
+  declarations: [
+    ContractListComponent,
+    ModalAoeContractComponent,
+    ContractFormComponent],
   imports: [
     CommonModule,
     ContractRoutingModule,
@@ -23,7 +29,11 @@ import { MatCardModule, MatDividerModule, MatIconModule } from '@angular/materia
     NgSelectModule,
     MatCardModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatMomentDateModule,
+    MatDatepickerModule,
+    BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
 
   ],
   entryComponents: [ModalAoeContractComponent]

@@ -21,10 +21,17 @@
       <label for="number"> Cijena bez PDV-a</label>
       <input type="text" class="form-control" formControlName="price" id="asdf" placeholder="Cijena">
 
+      <label for="expirationDate">Datum isteka</label>
+      <input class="form-control"
+               bsDatepicker
+               id="expirationDate"
+               type="text"
+               formControlName="expirationDate">
 
-      <label for="name"> Datum isteka ugovora</label>
-      <input type="text" class="form-control" formControlName="expirationDate" id="asdf"
+      <!-- <input matInput type="text"  class="form-control" formControlName="expirationDate" id="expirationDate"
         placeholder="Datum isteka ugovora">
+
+        <mat-datepicker-toggle [for] =''></mat-datepicker-toggle> -->
 
       <label for="name"> Dobavljac</label>
       <ng-select [items]="this.suppliersData" bindLabel="supplierName" bindValue="supplierId"

@@ -33,7 +33,7 @@ export class ContractListComponent implements OnInit {
 
 
   openContractModal(singleRow?) {
-    console.log('kurcina')
+    console.log('nesto')
     const modalRef = this.modalService.open(ModalAoeContractComponent);
     if(singleRow) {
       modalRef.componentInstance.rowData = singleRow;

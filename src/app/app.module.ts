@@ -5,14 +5,17 @@ import { AppComponent } from './app.component';
 import { ContractModule } from './contract/contract.module';
 import { SupplierModule } from './supplier/supplier.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateNativeAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { MatInputModule, MatCardModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatDatepicker, MatDatepickerModule } from '@angular/material';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -34,9 +37,15 @@ import { MatInputModule, MatCardModule } from '@angular/material';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    BsDatepickerModule.forRoot(),
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatFormFieldModule,
   ],
-  providers: [],
+  providers: [
+    { provide: NgbDateNativeAdapter, useClass: NgbDateNativeAdapter}
+  ],
   exports: [MatInputModule],
   bootstrap: [AppComponent]
 })
