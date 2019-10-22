@@ -6,7 +6,6 @@ import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalAoeSupplierComponent } from './modal-aoe-supplier/modal-aoe-supplier.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FilterPipe } from './pipes/filter.pipe';
 import { SupplierFormComponent } from './supplier-form/supplier-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -19,7 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
-  declarations: [SupplierListComponent, ModalAoeSupplierComponent, FilterPipe, SupplierFormComponent],
+  declarations: [SupplierListComponent, ModalAoeSupplierComponent, SupplierFormComponent],
   imports: [
     CommonModule,
     SupplierRoutingModule,
@@ -41,8 +40,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
 
   exports: [
-
-    FilterPipe,
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,

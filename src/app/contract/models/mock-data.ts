@@ -12,7 +12,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.03.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New1.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -34,7 +34,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.03.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New2.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -56,7 +56,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.03.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New3.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -78,7 +78,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.04.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New4.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -100,7 +100,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.03.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New5.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -122,7 +122,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '17.03.2021',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New6.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -144,7 +144,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.03.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New7.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -166,7 +166,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.09.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New8.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -188,7 +188,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.07.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New9.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'
@@ -210,7 +210,7 @@ export const CONTRACTDATA: IContract[]  = [
     expirationDate: '25.04.2020',
     supplier: {
       supplierId: 2,
-      supplierName: 'New.doo',
+      supplierName: 'New10.doo',
       street: 'Test street 2',
       estate: 'Test estate',
       city: 'Test city'

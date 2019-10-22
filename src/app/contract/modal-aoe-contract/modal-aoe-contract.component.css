@@ -58,10 +58,9 @@
 .form-row {
   display: flex;
 	flex-direction: row-reverse;
-	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: stretch;
-	align-content: center;
+  align-content: center;
 
 
 }
