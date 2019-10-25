@@ -5,6 +5,33 @@
   </div>
     </div>
 
+    <br /><br />
+    <div class="container2">
+         <h4>&nbsp;&nbsp;&nbsp;Izaberi datuml</h4>
+         <div class="col-md-3">
+              <input type="text | date: 'y-MM-dd'" name="from_date" id="from_date" class="form-control" bsDatepicker placeholder="From Date" [(bsValue)]="from_date"/>
+         </div>
+         <div class="col-md-3">
+              <input type="text | date: 'y-MM-dd'" name="to_date" id="to_date" class="form-control" bsDatepicker placeholder="To Date" [(bsValue)]="to_date  "/>
+         </div>
+         <div class="col-md-5">
+              <input type="button" (click)="myfilter()" name="filter" id="filter" value="Filter" class="btn btn-info" />
+         </div>
+         </div>
+         <br />
+
+
+
+
+    <!-- <div class= "row3 justify-content-center">
+      <label for="daterange">Odabri datume</label>
+      <input class="form-control justify-content-center"
+               bsDaterangepicker
+               id="daterange"
+               type="text"
+               formControlName="daterange">
+     </div> -->
+
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
@@ -15,7 +42,7 @@
                     </div>
                     <!--end of col-->
                     <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords" (keyup)="filterDatatable2($event)">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Pretraži"  (keyup)="filterDatatable2($event)">
                     </div>
                     <!--end of col-->
                     <!--end of col-->
@@ -32,9 +59,6 @@
         <i class="fa fa-plus"></i>
     </button>
 </div>
-
-
-
 
   <div class="Novo">
     <ngx-datatable style="box-shadow: none" class="material fullscreen" [columnMode]="'force'" [headerHeight]="50"
@@ -147,11 +171,21 @@
           </div>
         </ng-template>
       </ngx-datatable-column>
-    </ngx-datatable>
-  </div>
 
 
 
+  <ngx-datatable-column name="Charts">
+    <ng-template ngx-datatable-header-template>
+      <font color="red"> Charts</font>
+    </ng-template>
+    <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+      <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
+        <button class="btn btn-outline-primary" (click)="openChartsModal(row)"><i class="fas fa-chart-pie"></i></button>
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+</div>
 
    <!-- <input id="name" name="name" class="form-control"
       required minlength="8" required maxlength="11"

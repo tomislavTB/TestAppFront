@@ -1,24 +1,21 @@
 <router-outlet></router-outlet>
 
-<form action="/action_page.php">
-  Naziv dobavljača:<br> <input type="text" name="name" class="form-control" placeholder= "Unesite naziv dobavljaca"
-  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
 
+<form class="user" [formGroup]="supplierForm" (ngSubmit)="onFormSubmit()">
+  <div class="row">
+    <div class="modal2 col-md-8">
+        <label for="name">Naziv Dobavljaca</label>
+        <input type="text" class="form-control" formControlName="supplierName" id="asdf" placeholder="Naziv">
 
+        <label for="name"> Ulica i broj</label>
+        <input type="text" class="form-control" formControlName="street" id="asdf" placeholder="Ulica i broj" >
 
-  Ulica i broj: <br>    <input type="text" name="street" class="form-control" placeholder= "Unesite ulicu i broj"
-  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
+        <label for="name"> Naselje</label>
+        <input type="text" class="form-control" formControlName="estate" id="asdf" placeholder="Naselje">
 
+        <label for="name"> Grad</label>
+        <input type="text" class="form-control" formControlName="city" id="asdf" placeholder="Grad">
+      </div>
+    </div>
+  </form>
 
-  Naselje: <br>         <input type="text" name="estate" class="form-control" placeholder= "Unesite naselje"
-  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
-
-
-  Grad: <br>            <input type="text" name="city" class="form-control" placeholder= "Unesite grad"
-  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.number.pattern = this.value;" required><br>
-
-
-
-
-  <input type="submit" value="Submit">
-</form>

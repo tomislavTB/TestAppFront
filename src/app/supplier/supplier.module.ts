@@ -5,12 +5,12 @@ import { SupplierRoutingModule } from './supplier-routing.module';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalAoeSupplierComponent } from './modal-aoe-supplier/modal-aoe-supplier.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { SupplierFormComponent } from './supplier-form/supplier-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatRippleModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ModalGuardSupplierComponent } from './modal-guard-supplier/modal-guard-supplier.component';
 
 
 
@@ -18,12 +18,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
-  declarations: [SupplierListComponent, ModalAoeSupplierComponent, SupplierFormComponent],
+  declarations: [SupplierListComponent, ModalAoeSupplierComponent, SupplierFormComponent, ModalGuardSupplierComponent],
   imports: [
     CommonModule,
     SupplierRoutingModule,
     NgxDatatableModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,

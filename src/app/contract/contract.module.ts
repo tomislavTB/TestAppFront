@@ -13,12 +13,17 @@ import { MatCardModule, MatDividerModule, MatIconModule, MatDatepicker, MatDatep
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
+import { ModalChartsContractComponent } from './modal-charts-contract/modal-charts-contract.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 
 @NgModule({
   declarations: [
     ContractListComponent,
     ModalAoeContractComponent,
-    ContractFormComponent],
+    ContractFormComponent,
+    ModalChartsContractComponent,
+    ],
   imports: [
     CommonModule,
     ContractRoutingModule,
@@ -34,8 +39,9 @@ import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
     MatDatepickerModule,
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
+    NgxEchartsModule,
 
   ],
-  entryComponents: [ModalAoeContractComponent]
+  entryComponents: [ModalAoeContractComponent, ModalChartsContractComponent]
 })
 export class ContractModule { }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ModalAoeContractGuard } from './contract/modal-aoe-contract/modal-aoe-contract.guard';
 
 
 const routes: Routes = [

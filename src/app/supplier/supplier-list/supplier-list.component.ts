@@ -18,6 +18,7 @@ export class SupplierListComponent implements OnInit {
   suppliersData: ISupplier[] = [];
   public searchString: string;
   staticRows: ISupplier[] = [];
+  staticData: ISupplier[] = [];
 
 
 
@@ -31,7 +32,7 @@ export class SupplierListComponent implements OnInit {
   ngOnInit() {
     this.suppliersData = SUPPLIERDATA;
     this.staticRows = SUPPLIERDATA;
-    console.log(this.suppliersData)
+    this.staticData = SUPPLIERDATA;
   }
 
 
@@ -53,34 +54,28 @@ export class SupplierListComponent implements OnInit {
 
    // filters results
    filterDatatable(event) {
+    if (event.target.value != null) {
     // get the value of the key pressed and make it lowercase
     let val = event.target.value.toLowerCase();
     // get the amount of columns in the table
     let colsAmt = 4;
     // get the key names of each column in the dataset
-    let keys = Object.keys(this.suppliersData[0]);
+    let keys = Object.keys(this.staticData[0]);
     // assign filtered matches to the active datatable
     // this.suppliersData = this.suppliersData.filter(function(x) {
     //   return x.supplierName 'Like' '%Ivan';
     // })
-    this.suppliersData = this.suppliersData.filter(item => {
+    this.suppliersData = SUPPLIERDATA.filter(item => {
         // iterate through each row's column data
         for (let i = 0; i < colsAmt; i++) {
             // check for a match
             if (item[keys[i]] != null && item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
                 // found match, return true to add to result set
                 return true;
-            } else {
-            return this.toastr.error('Nema traženog rezultata');
-          }
+            }
         }
-    });
-}
-
-
-
-  createApplicationYear() {
+     });
+   }
   }
+
 }
-
-

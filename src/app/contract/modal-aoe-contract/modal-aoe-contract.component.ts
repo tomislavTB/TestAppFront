@@ -8,6 +8,7 @@ import { SUPPLIERDATA } from 'src/app/supplier/models/mock-data';
 import { NgbModal,  NgbDateNativeAdapter, NgbDatepicker, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import {NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
+import { ModalAoeContractGuard } from './modal-aoe-contract.guard';
 
 @Component({
   selector: 'app-modal-aoe-contract',
@@ -29,6 +30,8 @@ export class ModalAoeContractComponent implements OnInit {
     private ngbModal: NgbModal,
     private ngbDateNativeAdapter: NgbDateNativeAdapter,
     private parserFormatter: NgbDateParserFormatter,
+
+
   ) { }
 
   contractAoe: FormGroup;
@@ -37,6 +40,25 @@ export class ModalAoeContractComponent implements OnInit {
   currentTime: any;
   minDateFrom: any;
   minDateTo: any;
+  private currentData: IContract;
+  private originalData: IContract;
+
+
+
+  get data(): IContract {
+    return this.currentData;
+  }
+
+  set data(value: IContract) {
+    this.currentData = value;
+    this.originalData = { ...value};
+  }
+
+
+  get isDirty(): boolean {
+    return JSON.stringify(this.originalData) !== JSON.stringify(this.currentData);
+  }
+
 
   ngOnInit() {
 
@@ -97,6 +119,7 @@ export class ModalAoeContractComponent implements OnInit {
     this.isAmountCalculated2 = true;
     this.rowData.price = price * 7.5;
   }
+
 
   // function() {
   //   ('input[name="daterange"]').daterangepicker({

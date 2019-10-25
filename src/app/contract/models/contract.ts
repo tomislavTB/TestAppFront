@@ -9,7 +9,7 @@ export interface IContract {
   Currency: string;
   pricePDV: number;
   price: number;
-  expirationDate: String;
+  expirationDate: string;
   supplier: ISupplier;
   deliveryNote: boolean;
   deliveryReceipt: boolean;

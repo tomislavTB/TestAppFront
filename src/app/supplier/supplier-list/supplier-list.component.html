@@ -73,9 +73,18 @@
             <button class="gumb btn btn-outline-primary"><i class="fas fa-search-plus"(click)="openSupplierModal(row)"></i></button>
           </div>
         </ng-template>
-
-
-
       </ngx-datatable-column>
+
+        <ngx-datatable-column name="Charts">
+          <ng-template ngx-datatable-header-template>
+            <font color="red"> Forma</font>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+            <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
+              <button class="btn btn-outline-primary" [routerLink] ="[ row.supplierId]"><i class="fas fa-align-right"></i></button>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+
     </ngx-datatable>
   </div>
