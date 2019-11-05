@@ -14,7 +14,15 @@
         <input type="text" class="form-control" formControlName="estate" id="asdf" placeholder="Naselje">
 
         <label for="name"> Grad</label>
-        <input type="text" class="form-control" formControlName="city" id="asdf" placeholder="Grad">
+        <input type="text" class="form-control" formControlName="city" id="asdf" placeholder="Grad"><br>
+
+        <div class='gumb'>
+          <button type="submit" (click)="onFormSubmit()"> <i class="far fa-save"></i> </button>
+        </div>
+
+        <div class = "odustani">
+        <a (click)="goBack()" class="btn btn-outline-primary float-right">Odustani</a>
+      </div>
       </div>
     </div>
   </form>

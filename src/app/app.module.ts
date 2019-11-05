@@ -8,7 +8,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgbModule, NgbDateNativeAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -16,13 +15,17 @@ import { MatInputModule, MatCardModule, MatDatepicker, MatDatepickerModule } fro
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-
+import { LoginModule } from './login/login.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +45,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatMomentDateModule,
     MatFormFieldModule,
+    LoginModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    { provide: NgbDateNativeAdapter, useClass: NgbDateNativeAdapter}
-  ],
-  exports: [MatInputModule],
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        { provide: NgbDateNativeAdapter, useClass: NgbDateNativeAdapter},
+
+    // provider used to create fake backend
+    fakeBackendProvider
+],
+  exports: [MatInputModule,
+            FormsModule,
+            ReactiveFormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

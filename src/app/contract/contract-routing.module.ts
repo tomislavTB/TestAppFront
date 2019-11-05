@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { ContractFormComponent } from './contract-form/contract-form.component';
-import { ModalAoeContractGuard } from './modal-aoe-contract/modal-aoe-contract.guard';
+import { AuthGuard } from '../helpers/auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'contracts',
-    component: ContractListComponent
+    component: ContractListComponent,
+    canActivate: [AuthGuard]
 
   },
   {
     path: 'contracts/:id',
-    component: ContractFormComponent
+    component: ContractFormComponent,
+    canActivate: [AuthGuard]
   },
 {
   path: 'contracts/new',

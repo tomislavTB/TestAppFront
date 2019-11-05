@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModalAoeContractGuard } from './contract/modal-aoe-contract/modal-aoe-contract.guard';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -10,25 +10,19 @@ const routes: Routes = [
   },
 
   {
-  path: 'suppliers',
-  loadChildren : './supplier/supplier.module#SupplierModule'
-  },
-
-  {
-    path: 'suppliers/new',
+    path: 'suppliers',
     loadChildren : './supplier/supplier.module#SupplierModule'
-    },
+  },
+  {
 
-    {
-      path: 'contracts /new',
-      loadChildren : './contract/contract.module#ContractModule'
-      }
-
+    path: 'login',
+    loadChildren : './login/login.module#LoginModule'
+  }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

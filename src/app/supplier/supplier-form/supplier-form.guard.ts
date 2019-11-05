@@ -26,8 +26,7 @@ export class SupplierFormGuard implements CanDeactivate<SupplierFormComponent>  
 
       if (component.isDirty()) {
         // const supplierName = component.rowData.supplierName || 'New Contract';
-        return confirm(`Navigate away and lose all changes to?`);
+        return confirm(`Napustanjem forme izgubit cete sve podatke!`);
       }
-      return true;
     }
   }

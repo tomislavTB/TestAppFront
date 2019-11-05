@@ -4,6 +4,8 @@ import { SUPPLIERDATA } from '../models/mock-data';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DeactivationGuarded } from '../deactivation-guarded';
+import { ToastrService } from 'ngx-toastr';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-supplier-form',
@@ -16,8 +18,6 @@ export class SupplierFormComponent implements OnInit, DeactivationGuarded  {
   suppliersData: ISupplier[] = [];
   staticRows: ISupplier[] = [];
   staticData: ISupplier[] = [];
-  currentData: ISupplier;
-  originalData: ISupplier;
   supplierId: number;
   supplier: ISupplier;
 
@@ -25,10 +25,17 @@ export class SupplierFormComponent implements OnInit, DeactivationGuarded  {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService,
+    private location: Location
   ) { }
 
   supplierForm: FormGroup;
+
+
+  goBack() {
+    this.location.back();
+  }
 
   isDirty(): boolean {
     return JSON.stringify(this.supplierForm.value) !== JSON.stringify(this.supplier);
@@ -38,14 +45,17 @@ export class SupplierFormComponent implements OnInit, DeactivationGuarded  {
     console.log(this.supplierForm)
     if(this.supplierForm.valid) {
       console.log('form validna')
-
+      this.toastr.success('Forma je validna');
     } else {
       console.log('forma nije validna')
-
+      this.toastr.error('Forma nije validna');
     }
   }
 
   ngOnInit() {
+
+    // // tslint:disable-next-line:no-debugger
+    // debugger;
 
     this.route.params.subscribe(params => {
       this.supplierId = params.id;
@@ -55,6 +65,7 @@ export class SupplierFormComponent implements OnInit, DeactivationGuarded  {
       x.supplierId == this.supplierId
     );
 
+console.log( this.supplierForm)
 
     this.supplierForm = this.fb.group({
       supplierId: ['', Validators.required],
@@ -71,20 +82,10 @@ export class SupplierFormComponent implements OnInit, DeactivationGuarded  {
         estate:  this.supplier.estate,
         city:  this.supplier.city,
         supplierId: this.supplier.supplierId
-      })
-      console.log(JSON.stringify(this.supplierForm.value));
-      console.log(JSON.stringify(this.supplier));
-
-
-      console.log( JSON.stringify(this.supplierForm.value) === JSON.stringify(this.supplier));
-
+      });
 
     }
-  }
-
-  test(e) {
-    console.log(e);
+    console.log( this.supplierForm)
 
   }
-
-}
+  }

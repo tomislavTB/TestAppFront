@@ -6,6 +6,7 @@ import { SUPPLIERDATA } from '../models/mock-data';
 import {  Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -25,14 +26,20 @@ export class SupplierListComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal, private  router: Router,
-    private toastr: ToastrService
-
+    private toastr: ToastrService,
+    private location: Location
   ) { }
+
+
 
   ngOnInit() {
     this.suppliersData = SUPPLIERDATA;
     this.staticRows = SUPPLIERDATA;
     this.staticData = SUPPLIERDATA;
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 

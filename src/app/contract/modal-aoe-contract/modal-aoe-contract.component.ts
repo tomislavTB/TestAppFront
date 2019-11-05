@@ -8,7 +8,6 @@ import { SUPPLIERDATA } from 'src/app/supplier/models/mock-data';
 import { NgbModal,  NgbDateNativeAdapter, NgbDatepicker, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import {NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
-import { ModalAoeContractGuard } from './modal-aoe-contract.guard';
 
 @Component({
   selector: 'app-modal-aoe-contract',
