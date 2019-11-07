@@ -20,6 +20,7 @@ export class SupplierListComponent implements OnInit {
   public searchString: string;
   staticRows: ISupplier[] = [];
   staticData: ISupplier[] = [];
+  dataName: any;
 
 
 
@@ -43,16 +44,16 @@ export class SupplierListComponent implements OnInit {
   }
 
 
-  openSupplierModal(singleRow?) {
+  openSupplierModal(row?) {
     const modalRef = this.modalService.open(ModalAoeSupplierComponent);
-    if(singleRow) {
-      modalRef.componentInstance.rowData = singleRow;
+    if(row) {
+      modalRef.componentInstance.rowData = row;
     } else {
       modalRef.componentInstance.rowData = null;
     }
     modalRef.result.then(result => {
       if (result === 'success') {
-        console.log('uspjeh')
+        this.toastr.success('Forma je jebeno validna')
       }
     }).catch((res) => {});
   }
@@ -84,5 +85,12 @@ export class SupplierListComponent implements OnInit {
      });
    }
   }
+
+  @Input()
+  set singleData(singleData: string) {
+    this.dataName = singleData ? singleData : [];
+  }
+
+  get singleData(): string { return this.dataName; }
 
 }

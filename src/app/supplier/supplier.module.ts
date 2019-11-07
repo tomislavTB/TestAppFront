@@ -11,13 +11,14 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatRippleModule } 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalGuardSupplierComponent } from './modal-guard-supplier/modal-guard-supplier.component';
 import { SupplierRoutingModule } from './supplier-routing.module';
+import { SupplierInteractionComponent } from './supplier-interaction/supplier-interaction.component';
 
 
 
 
 
 @NgModule({
-  declarations: [SupplierListComponent, ModalAoeSupplierComponent, SupplierFormComponent, ModalGuardSupplierComponent],
+  declarations: [SupplierListComponent, ModalAoeSupplierComponent, SupplierFormComponent, ModalGuardSupplierComponent, SupplierInteractionComponent],
   imports: [
     CommonModule,
     SupplierRoutingModule,

@@ -1,3 +1,4 @@
+<div class="pokusaj">
 <form class="user" [formGroup]="contractAoe" (ngSubmit)="onFormSubmit()">
   <div class="row">
     <div class="modal1 col-md-8 ">
@@ -51,11 +52,9 @@
         <button type="submit" (click)="onFormSubmit()"> <i class="far fa-save"></i> </button>
       </div>
     </div>
-    <div class="col-md-6">
 
-    </div>
   </div>
-</form>
+
 
 <!-- <div class="modal-content">
     INFO:<br>
@@ -95,6 +94,13 @@
               </div>
             </div>
 
+          <h2>Nova tablica</h2>
+          <div class="tablica col-sm-12">
+              <app-contract-interaction [singleRow]="rowData">  </app-contract-interaction>
+          </div>
+        </div>
+      </form>
+    </div>
 
 <!-- <div class="novo3" *ngIf= "rowData">
    Cijena sa PDV-om u kunama: {{ rowData.pricePDV }} <span *ngIf="rowData.Currency == 'Euro' && !isAmountCalculated" (click)="OnIzracunaj(rowData.pricePDV)"> <i class="fas fa-calculator"> </i>  </span><br>

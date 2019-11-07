@@ -9,13 +9,15 @@ import * as moment from 'moment';
 import { format } from 'url';
 import { DatePipe } from '@angular/common';
 import { ModalChartsContractComponent } from '../modal-charts-contract/modal-charts-contract.component';
+import { ViewEncapsulation } from '@angular/core';
+
 
 
 @Component({
   selector: 'app-contract-list',
   templateUrl: './contract-list.component.html',
   styleUrls: ['./contract-list.component.css'],
-
+  encapsulation: ViewEncapsulation.None
 })
 export class ContractListComponent implements OnInit {
 
@@ -41,7 +43,9 @@ export class ContractListComponent implements OnInit {
 
   openContractModal(singleRow?) {
     console.log('nesto')
-    const modalRef = this.modalService.open(ModalAoeContractComponent);
+    const modalRef = this.modalService.open(ModalAoeContractComponent
+// ,{ size: 'lg', container: 'ngb-modal-window' }
+      );
     if (singleRow) {
       modalRef.componentInstance.rowData = singleRow;
     } else {
@@ -57,9 +61,7 @@ export class ContractListComponent implements OnInit {
 
 
   openChartsModal(singleRow?) {
-    const modalRef2 = this.modalService2.open(ModalChartsContractComponent,{
-      size: 'lg'
-    });
+    const modalRef2 = this.modalService2.open(ModalChartsContractComponent);
     modalRef2.componentInstance.rowData = singleRow;
 
     modalRef2.result.then(result => {

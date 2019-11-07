@@ -11,3 +11,5 @@
   text-align: center;
 
 }
+
+.modal-lg { max-width: 1400px !important; }

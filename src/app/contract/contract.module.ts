@@ -15,6 +15,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import { ModalChartsContractComponent } from './modal-charts-contract/modal-charts-contract.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ContractInteractionComponent } from './contract-interaction/contract-interaction.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     ModalAoeContractComponent,
     ContractFormComponent,
     ModalChartsContractComponent,
+    ContractInteractionComponent,
     ],
   imports: [
     CommonModule,

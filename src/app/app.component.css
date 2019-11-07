@@ -20,4 +20,20 @@ body,html{
   margin: 0px;
 }
 
+.nesto {
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 14px;
+  color: blue;
+  background-color: rgb(25, 30, 26);
+  color: yellow;
+  border: 2px solid blue; /* Green */
+}
+
+.nesto2 {
+  position: absolute;
+  right:10px;
+  top:5px;
+
+}
 

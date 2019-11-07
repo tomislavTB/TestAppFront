@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-modal-aoe-supplier',
@@ -11,19 +13,20 @@ export class ModalAoeSupplierComponent implements OnInit {
 
   @Input() rowData;
   @Input() nesto;
+  heroes = this.rowData;
+  master = "master";
   constructor(
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private modal: NgbActiveModal
   ) { }
 
   supplierAoe: FormGroup;
 
-
   onFormSubmit() {
     console.log(this.supplierAoe)
-    if(this.supplierAoe.valid) {
-      console.log('form validna')
-      this.toastr.success('Forma je validna');
+    if (this.supplierAoe.valid) {
+      this.modal.close('success');
     } else {
       console.log('forma nije validna')
       this.toastr.error('Forma nije validna');
@@ -33,13 +36,14 @@ export class ModalAoeSupplierComponent implements OnInit {
   ngOnInit() {
     this.supplierAoe = this.fb.group({
       supplierName: ['', Validators.required],
-      street: [ '', Validators.required],
+      street: ['', Validators.required],
       estate: ['', Validators.required],
       city: ['', Validators.required]
-  });
 
 
-    if(this.rowData) {
+    });
+
+    if (this.rowData) {
       this.supplierAoe.patchValue({
         supplierName: this.rowData.supplierName,
         street: this.rowData.street,
@@ -47,14 +51,9 @@ export class ModalAoeSupplierComponent implements OnInit {
         city: this.rowData.city
 
 
-    })
+      })
 
     }
-
-
-    console.log(this.rowData);
-    console.log(this.nesto);
-
-}
+  }
 
 }

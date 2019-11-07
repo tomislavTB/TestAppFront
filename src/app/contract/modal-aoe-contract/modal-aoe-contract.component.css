@@ -6,6 +6,7 @@
   margin-left:90px;
   margin-top:15px;
   margin-bottom:15px;
+  border: none;
 
 }
 
@@ -24,11 +25,7 @@
 }
 
 .slika{
-  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
-  width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 80%;
-  clear: left;
-  margin-right:90px;
+
 }
 
 .example-card {
@@ -43,16 +40,7 @@
 }
 
  .card {
-  border-radius: 10px !important;
-  box-shadow: 0 4px 20px 1px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.08) !important;
-  border: 0 !important;
-  position: relative !important;
-  display: flex !important;
-  flex-direction: column !important;
-  min-width: 0 !important;
-  word-wrap: break-word !important;
-  background-color: #fff !important;
-  background-clip: border-box !important;
+
 }
 
 .form-row {
@@ -62,6 +50,20 @@
 	align-items: stretch;
   align-content: center;
 
+}
+
+.tablica {
+
+  font-size: 13px;;
 
 }
 
+.pokusaj{
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: auto;
+  border-bottom: 0px !important;
+  border-left: 0px !important;
+}

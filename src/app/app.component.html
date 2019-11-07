@@ -4,34 +4,37 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <button class="btn">
-    <a class="nav-link"  href="login">
+
+
+
+  <button class="nesto btn">
+    <a class="nav-link" class="fas fa-file-contract"  (click)="contracts()" >
+      <font size="5" color="white"> <b>Ugovori</b> </font>
+    </a>
+  </button>
+
+  <button class="nesto btn">
+    <a class="nav-link" class="fas fa-id-badge"  (click)="suppliers()">
+      <font size="5" color="white"> <b>Dobavljaci</b> </font>
+    </a>
+  </button>
+
+  <button class="nesto2 btn">
+    <a class="nav-link"  href="login" *ngIf="!this.user">
       <font size="5" color="white"> <b>Login</b> </font>
     </a>
   </button>
-  <button class="nav-item nav-link float-right" *ngIf="this.user" (click)="logout()">Logout</button>
+
+  <button class="nesto2 btn">
+    <a class="nav-link" *ngIf="this.user" (click)="logout()">
+      <font size="5" color="white"> <b>Logout</b> </font>
+    </a>
+  </button>
 
 
 
   <div class="navbar" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto font-weight-bold">
-      <li class="nav-item text-center">
-        <a href="contracts">
-          <i class="fas fa-file-contract"></i>
-          Ugovori
-        </a>
-      </li>
-      <li class="nav-item text-center">
-          <a href="suppliers">
-            <i class="fas fa-id-badge"></i>
-            Dobavljaci
-          </a>
-        </li>
-        <ul *ngIf="this.user">
-          <li>{{this.user.firstName}} {{this.user.lastName}}</li>
-      </ul>
-
-
 
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
